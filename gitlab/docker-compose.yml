@@ -1,0 +1,17 @@
+# https://hub.docker.com/r/gitlab/gitlab-ce/
+
+version: "2"
+services:
+  gitlab-ce:
+    container_name: gitlab
+    image: gitlab/gitlab-ce
+    ports:
+      - "16000:22"
+      - "16001:80"
+      - "16002:443"
+    hostname: gitlab.example.com
+    restart: unless-stopped
+    volumes:
+      - /data/gitlab/config:/etc/gitlab
+      - /data/gitlab/logs:/var/log/gitlab
+      - /data/gitlab/data:/var/opt/gitlab
