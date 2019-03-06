@@ -1,0 +1,11 @@
+version: "2"
+services:
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - 16200:6379
+    volumes:
+      - /data/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - /data/redis/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
