@@ -1,0 +1,10 @@
+version: "2"
+services:
+  pypiserver:
+    container_name: pypiserver
+    image: pypiserver/pypiserver
+    ports:
+      - 17100:8080
+    volumes:
+      - /data/pypiserver/packages:/data/packages
+      - /data/pypiserver/.htpasswd:/data/.htpasswd
