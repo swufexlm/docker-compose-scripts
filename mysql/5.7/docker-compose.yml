@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   mysql:
     container_name: mysql
@@ -7,7 +7,7 @@ services:
       - 16100:3306
     environment:
       - MYSQL_ROOT_PASSWORD=******
+      - TZ=Asia/Shanghai
     volumes:
       - /data/mysql/data:/var/lib/mysql
       - /data/mysql/conf/my.cnf:/etc/mysql/my.cnf
-      - /data/mysql/logs:/logs
