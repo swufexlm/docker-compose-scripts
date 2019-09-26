@@ -11,3 +11,7 @@ services:
     volumes:
       - /data/mysql/data:/var/lib/mysql
       - /data/mysql/conf/my.cnf:/etc/mysql/my.cnf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"

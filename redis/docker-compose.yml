@@ -1,11 +1,17 @@
-version: "2"
+version: "3"
 services:
   redis:
     container_name: redis
     image: redis
     ports:
       - 16200:6379
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - /data/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
       - /data/redis/data:/data
     command: redis-server /usr/local/etc/redis/redis.conf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
